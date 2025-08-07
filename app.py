@@ -27,15 +27,8 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Set up database path - for Streamlit Cloud compatibility
-import os
-
-# Create a data directory in current directory if it doesn't exist
-if not os.path.exists("data"):
-    os.makedirs("data")
-
 # Create a connection to the database
-conn = sqlite3.connect('data/inventory.db', check_same_thread=False)
+conn = sqlite3.connect('inventory.db', check_same_thread=False)
 c = conn.cursor()
 
 # Create tables if they don't exist
